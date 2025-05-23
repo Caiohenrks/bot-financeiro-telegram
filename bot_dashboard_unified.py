@@ -175,8 +175,9 @@ async def dashboard_link(update: Update, context: ContextTypes.DEFAULT_TYPE):
     port = os.getenv("DASHBOARD_PORT", "12000")
     
     await update.message.reply_text(
-        f"🔗 Acesse o dashboard financeiro: https://work-1-jweyiixfpvbnkynq.prod-runtime.all-hands.dev\n\n"
-        "Lá você pode visualizar gráficos, análises detalhadas e simuladores financeiros."
+        f"🔗 Acesse o dashboard financeiro: https://work-1-opmokccwzxepjryr.prod-runtime.all-hands.dev:{port}\n\n"
+        "Lá você pode visualizar gráficos, análises detalhadas e simuladores financeiros.\n\n"
+        "✨ Novo recurso: Agora você pode filtrar os dados por usuário para visualizar apenas suas próprias finanças!"
     )
     return ConversationHandler.END
 
@@ -431,9 +432,9 @@ def run_dashboard():
     port = os.getenv("DASHBOARD_PORT", "12000")
     logging.info(f"Dashboard será iniciado na porta {port}")
     
-    # Executar o dashboard em um processo separado
+    # Executar o dashboard com filtro de usuários em um processo separado
     dashboard_process = subprocess.Popen(
-        [sys.executable, "dashboard_dark.py"],
+        [sys.executable, "dashboard_user_filter.py"],
         stdout=open("dashboard.log", "w"),
         stderr=subprocess.STDOUT
     )
