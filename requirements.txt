@@ -1,0 +1,10 @@
+python-telegram-bot
+openpyxl
+python-dotenv
+psycopg2-binary
+dash
+plotly
+pandas
+scikit-learn
+dash-bootstrap-components
+numpy

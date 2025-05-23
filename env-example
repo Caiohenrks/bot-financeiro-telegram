@@ -1,0 +1,8 @@
+TELEGRAM_TOKEN=seu_token_do_telegram_aqui
+DB_HOST=localhost
+DB_NAME=financas
+DB_USER=postgres
+DB_PASS=sua_senha_aqui
+
+# Porta para o dashboard (padrão: 12000)
+DASHBOARD_PORT=12000
